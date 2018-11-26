@@ -2,19 +2,19 @@ package model;
 
 public class Product {
 
-    private String id;
+    private int id;
     private Manufacturer manufacturer;
     private String serialNumber;
     private String name;
 
-    public Product(String id, Manufacturer manufacturer, String serialNumber, String name) {
+    public Product(int id, Manufacturer manufacturer, String serialNumber, String name) {
         this.id = id;
         this.manufacturer = manufacturer;
         this.serialNumber = serialNumber;
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
