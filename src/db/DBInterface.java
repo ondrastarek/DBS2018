@@ -17,6 +17,14 @@ public interface DBInterface {
     List<Article> getAllArticles();
 
     /**
+     * @param days Maximal number of days before planned service
+     *
+     * @return Returns a List with all articles in database with service planned
+     * in 0 to <code>days</code> days
+     */
+    List<Article> getAllArticlesWithPendingService(int days);
+
+    /**
      * @return Returns a List with all distributors in database
      */
     List<Distributor> getDistributorsList();
@@ -165,6 +173,16 @@ public interface DBInterface {
     boolean editArticle(int id, int productID, int distributorID, int securityID, int articleTypeID,
                         String UMDNS, LocalDate buyDate, int checkPeriod, int articleStatusID, String note,
                         int sectionID, double price);
+
+    /**
+     * @param articleID ID of the article to be edited
+     * @param articleStatusID ID of the status the article will be changed to
+     *
+     * @return Returns true if the transaction was successful, false otherwise
+     */
+    boolean editArticleStatus(int articleID, int articleStatusID);
+
+
 
     /**
      * @param id ID of the distributor to be edited
