@@ -6,13 +6,13 @@ public class ArticleDocument {
 
     private int id;
     private String link;
-    private DocumentType documentType;
+    private String documentName;
     private LocalDate documentDate;
 
-    public ArticleDocument(int id, String link, DocumentType documentType, LocalDate documentDate) {
+    public ArticleDocument(int id, String link, String documentName, LocalDate documentDate) {
         this.id = id;
         this.link = link;
-        this.documentType = documentType;
+        this.documentName = documentName;
         this.documentDate = documentDate;
     }
 
@@ -24,8 +24,8 @@ public class ArticleDocument {
         return link;
     }
 
-    public DocumentType getDocumentType() {
-        return documentType;
+    public String getDocumentName() {
+        return documentName;
     }
 
     public LocalDate getDocumentDate() {
