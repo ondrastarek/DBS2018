@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.3528428093645485" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.UI">
+     <VBox prefHeight="398.0" prefWidth="214.0">
+         <HBox prefHeight="30.0" prefWidth="200.0">
+             <Label text="Hledání:" HBox.hgrow="ALWAYS" />
+             <TextField HBox.hgrow="ALWAYS" />
+         </HBox>
+         <HBox prefWidth="200.0">
+             <ChoiceBox prefWidth="150.0" value="Všechny">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Všechny" />
+                         <String fx:value="Terapeutický" />
+                         <String fx:value="Laboratorní" />
+                         <String fx:value="Diagnostický" />
+                         <String fx:value="Technický" />
+                         <String fx:value="Jiný" />
+                     </FXCollections>
+                 </items>
+             </ChoiceBox>
+             <ChoiceBox prefWidth="150.0" value="Všechny">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Všechny" />
+                         <String fx:value="V provozu" />
+                         <String fx:value="V opravě" />
+                         <String fx:value="Vyřazen" />
+                         <String fx:value="Uskladněn" />
+                     </FXCollections>
+                 </items>
+             </ChoiceBox>
+         </HBox>
+      <ListView onMouseClicked="#handleListMouseClick" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+     </VBox>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+        <HBox prefWidth="200.0">
+            <VBox.margin>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+            </VBox.margin>
+            <Label text="Název:"/>
+            <TextField editable="false"/>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <VBox.margin>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+            </VBox.margin>
+            <Label text="Výrobce:"/>
+            <TextField editable="false"/>
+            <Label text="Distributor:">
+                <HBox.margin>
+                    <Insets left="4.0"/>
+                </HBox.margin>
+            </Label>
+            <TextField editable="false"/>
+        </HBox>
+    </VBox>
+</SplitPane>
