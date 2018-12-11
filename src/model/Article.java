@@ -8,6 +8,7 @@ public class Article {
     private int id;
     private Product product;
     private Distributor distributor;
+    private int inventoryNumber;
     private Security security;
     private ArticleType articleType;
     private String UMDNS;
@@ -20,12 +21,13 @@ public class Article {
     private List<ArticleDocument> documentList;
     private double price;
 
-    public Article(int id, Product product, Distributor distributor, Security security, ArticleType articleType,
+    public Article(int id, Product product, Distributor distributor, int inventoryNumber, Security security, ArticleType articleType,
                    String UMDNS, LocalDate buyDate, int checkPeriod, ArticleStatus articleStatus, String note,
                    Section section, List<ServiceProtocol> protocolList, List<ArticleDocument> documentList, double price) {
         this.id = id;
         this.product = product;
         this.distributor = distributor;
+        this.inventoryNumber = inventoryNumber;
         this.security = security;
         this.articleType = articleType;
         this.UMDNS = UMDNS;
@@ -49,6 +51,10 @@ public class Article {
 
     public Distributor getDistributor() {
         return distributor;
+    }
+
+    public int getInventoryNumber() {
+        return inventoryNumber;
     }
 
     public Security getSecurity() {
